@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	* {
+		@apply box-border transition-all;
+		&::-webkit-scrollbar {
+			@apply h-2 w-2;
+		}
+		&::-webkit-scrollbar-thumb {
+			@apply bg-accent rounded-full;
+		}
+	}
+	.bg-primary,
+	.bg-accent {
+		@apply text-secondary;
+	}
+	.bg-secondary {
+		@apply text-primary;
+	}
+}
