@@ -28,6 +28,7 @@ const Header = () => {
 				}`
 			}
 			key={i}
+			onClick={() => setNavbarOpen(!navbarOpen)}
 			to={item.path}>
 			{item.text}
 		</NavLink>

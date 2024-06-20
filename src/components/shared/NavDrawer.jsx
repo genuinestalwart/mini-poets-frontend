@@ -3,7 +3,11 @@ import { Box, CircularProgress, Drawer } from "@mui/material";
 import { Logout } from "@mui/icons-material";
 import StyledButton from "@/components/shared/StyledButton";
 
-const dashLinks = [{ path: "/account", text: "Dashboard" }];
+const dashLinks = [
+	{ path: "/account", text: "Dashboard" },
+	{ path: "/account/profile", text: "Profile" },
+	{ path: "/account/my-poems", text: "My Poems" },
+];
 
 const NavDrawer = ({
 	linkItems,

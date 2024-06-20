@@ -1,12 +1,18 @@
 import useAuth from "@/hooks/useAuth";
-import { CircularProgress } from "@mui/material";
+import { Box, CircularProgress } from "@mui/material";
 import { Navigate } from "react-router-dom";
 
 const PrivateRoute = ({ children }) => {
 	const { loading, user } = useAuth();
 
 	return loading ? (
-		<CircularProgress color='accent' />
+		<Box
+			alignItems='center'
+			display='flex'
+			height='100vh'
+			justifyContent='center'>
+			<CircularProgress color='accent' />
+		</Box>
 	) : user ? (
 		<>{children}</>
 	) : (

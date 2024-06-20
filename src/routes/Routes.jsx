@@ -8,6 +8,10 @@ import { createBrowserRouter } from "react-router-dom";
 import PrivateRoute from "@/routes/PrivateRoute";
 import DashLayout from "@/layouts/DashLayout";
 import DashboardPage from "@/pages/account/dashboard";
+import MyPoemsPage from "@/pages/account/my-poems";
+import ProfilePage from "@/pages/account/profile";
+import PoemPage from "@/pages/poems/poem";
+import NotFound from "@/components/shared/NotFound";
 
 export const router = createBrowserRouter([
 	{
@@ -19,6 +23,14 @@ export const router = createBrowserRouter([
 			{ path: "contact-us", element: <ContactUsPage /> },
 			{ path: "login", element: <LoginPage /> },
 			{ path: "poems", element: <PoemsPage /> },
+			{
+				path: "poems/:id",
+				element: (
+					<PrivateRoute>
+						<PoemPage />
+					</PrivateRoute>
+				),
+			},
 		],
 	},
 	{
@@ -28,6 +40,11 @@ export const router = createBrowserRouter([
 				<DashLayout />
 			</PrivateRoute>
 		),
-		children: [{ index: true, element: <DashboardPage /> }],
+		children: [
+			{ index: true, element: <DashboardPage /> },
+			{ path: "my-poems", element: <MyPoemsPage /> },
+			{ path: "profile", element: <ProfilePage /> },
+		],
 	},
+	{ path: "*", element: <NotFound /> },
 ]);

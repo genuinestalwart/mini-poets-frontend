@@ -1,5 +1,9 @@
+import { Container } from "@mui/material";
+
 const AboutUsPage = () => {
-	return <div>About Us</div>;
+	return (
+		<Container className='min-h-[calc(100vh_-_4rem)]'>About Us</Container>
+	);
 };
 
 export default AboutUsPage;

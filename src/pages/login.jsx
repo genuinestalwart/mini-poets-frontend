@@ -3,7 +3,7 @@ import Signup from "@/components/login/Signup";
 import useAuth from "@/hooks/useAuth";
 import useAxiosPublic from "@/hooks/useAxiosPublic";
 import { AuthContext } from "@/providers/AuthProvider";
-import { Box } from "@mui/material";
+import { Box, CircularProgress } from "@mui/material";
 import { useContext, useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 
@@ -52,8 +52,22 @@ const LoginPage = () => {
 		}
 	};
 
-	return !user ? (
-		<Box component='main' py={8}>
+	return loading ? (
+		<Box
+			alignItems='center'
+			className='h-[calc(100vh_-_4rem)]'
+			display='flex'
+			justifyContent='center'>
+			<CircularProgress color='accent' />
+		</Box>
+	) : !user ? (
+		<Box
+			alignItems='center'
+			className='min-h-[calc(100vh_-_4rem)]'
+			component='main'
+			display='flex'
+			justifyContent='center'
+			py={8}>
 			{login ? (
 				<Signin
 					authing={authing}

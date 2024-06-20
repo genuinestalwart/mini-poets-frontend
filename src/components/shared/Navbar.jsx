@@ -11,7 +11,11 @@ import { Logout } from "@mui/icons-material";
 import StyledButton from "@/components/shared/StyledButton";
 import { useState } from "react";
 
-const dashLinks = [{ path: "/account", text: "Dashboard" }];
+const dashLinks = [
+	{ path: "/account", text: "Dashboard" },
+	{ path: "/account/profile", text: "Profile" },
+	{ path: "/account/my-poems", text: "My Poems" },
+];
 
 const Navbar = ({ linkItems, loading, logOut, user }) => {
 	const [anchorEl, setAnchorEl] = useState(null);

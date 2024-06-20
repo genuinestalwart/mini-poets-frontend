@@ -1,5 +1,9 @@
+import { Container } from "@mui/material";
+
 const ContactUsPage = () => {
-	return <div>Contact Us</div>;
+	return (
+		<Container className='min-h-[calc(100vh_-_4rem)]'>Contact Us</Container>
+	);
 };
 
 export default ContactUsPage;
